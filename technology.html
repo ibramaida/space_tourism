@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+  <body class="technology">
+      <!-- this element for keyboard users who want to skip the navigation section and go direct to the button (explore) -->
+      <a href="#main" class="skip-to-content">skip to content</a>
+
+      <header class="primary-header flex">
+        <div class="logo-box">
+          <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo">
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">menu</span></button>
+        <nav class="menu-items">
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+              <!-- we use aria-hidden = true so the screen reader does not read this element, this is the obisit of sr-only when screen reader read this element but it does not appear on screen -->
+                <li><a href="index.html" class="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">00</span>Home</a></li>
+                <li><a href="destination.html" class="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">01</span>Destination</a></li>
+                <li><a href="crew.html" class="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">02</span>Crew</a></li>
+                <li class="active"><a href="technology.html" class="ff-sans-cond uppercase text-white letter-spacing-2"><span aria-hidden="true">03</span>Technology</a></li>
+            </ul>
+        </nav>
+      </header>
+
+      <main id="main" class="grid-container grid-container--technology flow">
+        <h1 class="numbered-title"><span>03</span>Space launch 101</h1>
+
+        <picture id="capsule-image">
+          <source media="(min-width:45em)" srcset="./assets/technology/image-space-capsule-portrait.jpg">
+          <img src="./assets/technology/image-space-capsule-landscape.jpg" alt="Space capsule">
+        </picture>
+
+        <picture id="spaceport-image" hidden>
+          <source media="(min-width:45em)" srcset="./assets/technology/image-spaceport-portrait.jpg">
+          <img src="./assets/technology/image-spaceport-landscape.jpg" alt="Space capsule">
+        </picture>
+
+        <picture id="vehicle-image" hidden>
+          <source media="(min-width:45em)" srcset="./assets/technology/image-launch-vehicle-portrait.jpg">
+          <img src="./assets/technology/image-launch-vehicle-landscape.jpg" alt="Space capsule">
+        </picture>
+
+        <div class="number-indicators flex" role="tablist">
+          <button aria-selected="true" tabindex="0" role="tab" aria-controls="capsule-tab" data-image="capsule-image">1</button>
+          <button aria-selected="false" tabindex="-1" role="tab" aria-controls="spaceport-tab" data-image="spaceport-image">2</button>
+          <button aria-selected="false" tabindex="-1" role="tab" aria-controls="vehicle-tab" data-image="vehicle-image">3</button>
+        </div>
+
+        <article class="technology-details flow" role="tab-panel" id="capsule-tab">
+          <header class="flow flow--small-space">
+            <h2 class="fs-400 ff-serif uppercase text-accent">The terminology...</h2>
+            <p class="fs-700 uppercase ff-serif">Space capsule</p>
+          </header>
+          <p>A space capsule is an often-crewed spacecraft that uses a blunt-body reentry 
+            capsule to reenter the Earth's atmosphere without wings. Our capsule is where 
+            you'll spend your time during the flight. It includes a space gym, cinema, 
+            and plenty of other activities to keep you entertained.</p>
+        </article>
+
+        <article class="technology-details flow" role="tab-panel" id="spaceport-tab" hidden>
+          <header class="flow flow--small-space">
+            <h2 class="fs-400 ff-serif uppercase text-accent">The terminology...</h2>
+            <p class="fs-700 uppercase ff-serif">Spaceport</p>
+          </header>
+          <p>A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, 
+            by analogy to the seaport for ships or airport for aircraft. Based in the 
+            famous Cape Canaveral, our spaceport is ideally situated to take advantage 
+            of the Earth’s rotation for launch.</p>
+        </article>
+
+        <article class="technology-details flow" role="tab-panel" id="vehicle-tab" hidden>
+          <header class="flow flow--small-space">
+            <h2 class="fs-400 ff-serif uppercase text-accent">The terminology...</h2>
+            <p class="fs-700 uppercase ff-serif">Launch vehicle</p>
+          </header>
+          <p>A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a 
+            payload from Earth's surface to space, usually to Earth orbit or beyond. Our 
+            WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, 
+            it's quite an awe-inspiring sight on the launch pad!</p>
+        </article>
+
+      </main>
+
+
+      <script src="navigation.js"></script>
+      <script src="tabs.js"></script>
+</body>
+</html>
